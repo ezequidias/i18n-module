@@ -48,7 +48,7 @@ export function buildHook (moduleContainer, options) {
   // Add vue-i18n-loader if applicable
   if (options.vueI18nLoader) {
     moduleContainer.extendBuild(config => {
-      const loaders = config.module.rules.find(el => el.loader === 'vue-loader').options.loaders
+      const loaders = config.module.rules.find(el => el.loader.includes('vue-loader')).options.loaders
       if (loaders) {
         // vue-loader under 15.0.0
         /* istanbul ignore next */
